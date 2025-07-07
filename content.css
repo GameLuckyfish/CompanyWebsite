@@ -46,8 +46,28 @@
     align-items: flex-start;
 }
 
+@media (max-width: 900px) and (orientation: portrait) {
+    .media-and-description {
+        flex-direction: column; /* Stack image and content vertically */
+        align-items: center; /* Center image */
+    }
+
+    .media-and-description img {
+        max-width: 150px; /* Half the original size for portrait */
+    }
+}
+
 .media-and-description img {
     max-width: 300px;
+}
+
+@media (min-width: 901px) and (orientation: landscape) {
+    .media-and-description img {
+        max-width: 150px;
+    }
+}
+
+.media-and-description img {
     height: auto;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.15);
