@@ -1,0 +1,41 @@
+/* Accordion Styles for Mobile */
+@media (max-width: 900px) {
+    .main-container {
+        flex-direction: column; /* Stack sidebar and content vertically */
+        align-items: stretch; /* Make children fill the width */
+    }
+
+    #sidebar {
+        width: 100%; /* Sidebar takes full width */
+        box-shadow: none;
+    }
+
+    .sidebar-button {
+        width: 100%; /* Buttons take full width */
+        text-align: center; /* Center the button text */
+        border-radius: 5px 5px 0 0; /* Round top corners */
+    }
+    
+    .sidebar-button.active {
+        border-radius: 5px 5px 0 0; /* Keep top corners rounded when active */
+    }
+
+    #content-display {
+        display: block; /* Ensure content area is visible */
+        width: 100%;
+        padding: 0;
+        border: none;
+        flex: none; /* Remove flex behavior in mobile view */
+        background-color: transparent; /* Ensure no background */
+        box-shadow: none; /* Ensure no shadow */
+    }
+
+    .feature-card {
+        border-top: none;
+        border-radius: 0 0 5px 5px; /* Round bottom corners */
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); /* Add shadow to look attached */
+        margin-bottom: 1rem; /* Space between accordions */
+        padding: 1rem;
+        background-color: #f8f9fa;
+    }
+}
