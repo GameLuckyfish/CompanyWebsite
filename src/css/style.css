@@ -18,7 +18,7 @@ header
     padding: 4rem 0; /* 높이를 두 배 더 늘림 */
     text-align: center;
     position: relative;
-    background-image: url('타이틀.gif'); /* header에 배경 이미지 적용 */
+    background-image: url('../../public/assets/images/타이틀.gif'); /* header에 배경 이미지 적용 */
     background-size: cover; /* 이미지가 전체 배경을 덮도록 조절 */
     background-repeat: no-repeat; /* 이미지 반복 없음 */
     background-position: center 25%; /* 이미지를 중앙에서 아래로 5% 이동 */
