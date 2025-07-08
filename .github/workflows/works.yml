@@ -1,0 +1,4 @@
+permissions:
+  contents: read          # 저장소 내용 읽기 권한만 필요
+  pages: write            # GitHub Pages에 배포하기 위한 쓰기 권한
+  id-token: write         # OIDC를 사용하는 경우
