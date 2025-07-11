@@ -83,17 +83,14 @@ export function loadContent(tabGroup) {
             h2.setAttribute('data-en', termsCardData.enTitle);
             h2.textContent = termsCardData.koTitle;
 
-            const p = document.createElement('p');
-            p.setAttribute('data-ko', termsCardData.koDescription);
-            p.setAttribute('data-en', termsCardData.enDescription);
-            p.innerHTML = termsCardData.koDescription;
+            const pre = document.createElement('pre'); // <p>를 <pre>로 변경
+            pre.setAttribute('data-ko', termsCardData.koDescription);
+            pre.setAttribute('data-en', termsCardData.enDescription);
+            pre.textContent = termsCardData.koDescription; // innerHTML 대신 textContent 사용
 
             targetTabContent.appendChild(h2);
-            targetTabContent.appendChild(p);
+            targetTabContent.appendChild(pre); // 변경된 pre 요소를 추가
             console.log('loadContent: Appended terms content to', targetTabContentId);
-            console.log('loadContent: termsCardData:', termsCardData);
-            console.log('loadContent: targetTabContent innerHTML:', targetTabContent.innerHTML);
-            console.log('loadContent: terms tab processing complete.');
         } else {
             console.warn('loadContent: No terms data found.');
         }
