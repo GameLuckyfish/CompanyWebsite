@@ -65,6 +65,12 @@
     flex-shrink: 0;
 }
 
+/* Increase size of the title-card image */
+#title-card .media-and-description img {
+    max-width: 585px; /* 390px * 1.5 */
+}
+
+
 @media (min-width: 901px) and (orientation: landscape) {
     .media-and-description img {
         max-width: 195px;

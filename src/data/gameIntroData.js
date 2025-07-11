@@ -1,8 +1,8 @@
 export const gameIntroData = [
     {
         id: "title-card",
-        koTitle: "게임 타이틀",
-        enTitle: "Game Title",
+        koTitle: "게임 소개",
+        enTitle: "Game Intro",
         image: "public/assets/images/타이틀.png",
         koDescription: `Horde Defense Squad의 웅장한 시작을 알리는 타이틀 화면입니다. 플레이어는 여기서 새로운 게임을 시작하거나, 기존 데이터를 불러오고, 게임 설정을 조정하는 등 모험을 위한 첫 발을 내딛을 수 있습니다.`, 
         enDescription: `This is the majestic title screen of Horde Defense Squad, marking the beginning of your adventure. Players can start a new game, load existing data, adjust game settings, and take their first steps into the world.`
