@@ -86,9 +86,7 @@ header nav button.active {
     border-color: #007bff;
 }
 
-.top-tab-button[data-tab-group="planning"] {
-    display: none;
-}
+
 
 /* Main Container Styles */
 .main-container {

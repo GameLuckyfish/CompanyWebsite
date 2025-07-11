@@ -53,25 +53,22 @@
     }
 
     .media-and-description img {
-        max-width: 150px; /* Half the original size for portrait */
+        max-width: 195px; /* Half the original size for portrait */
     }
 }
 
 .media-and-description img {
-    max-width: 300px;
-}
-
-@media (min-width: 901px) and (orientation: landscape) {
-    .media-and-description img {
-        max-width: 150px;
-    }
-}
-
-.media-and-description img {
+    max-width: 390px;
     height: auto;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     flex-shrink: 0;
+}
+
+@media (min-width: 901px) and (orientation: landscape) {
+    .media-and-description img {
+        max-width: 195px;
+    }
 }
 
 .media-and-description .content {
