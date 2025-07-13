@@ -1,41 +1,59 @@
 import { setLanguage } from './language.js';
 import { switchTabGroup } from './tabManager.js';
 import { setupSidebarAccordion } from './sidebarAccordion.js';
-import { loadContent } from './contentLoader.js'; // 새로 추가
+import { loadContent } from './contentLoader.js';
+import { tabsConfig } from './config/tabsConfig.js';
+
+/**
+ * 설정 파일(tabsConfig)을 기반으로 탭 버튼을 동적으로 생성합니다.
+ */
+function createTabButtons() {
+    const container = document.querySelector('.top-tab-container');
+    container.innerHTML = ''; // 기존 버튼 삭제
+
+    Object.keys(tabsConfig).forEach((tabId, index) => {
+        const config = tabsConfig[tabId];
+        const button = document.createElement('button');
+        button.classList.add('top-tab-button');
+        if (index === 0) {
+            button.classList.add('active'); // 첫 번째 탭을 기본 활성 탭으로 설정
+        }
+        button.dataset.tabGroup = tabId;
+        button.dataset.ko = config.buttonTextKO;
+        button.dataset.en = config.buttonTextEN;
+        button.textContent = config.buttonTextKO; // 기본 언어는 한국어로 설정
+        
+        button.addEventListener('click', () => switchTabGroup(tabId));
+        container.appendChild(button);
+    });
+}
 
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Basic selectors ---
-    const langKoButton = document.getElementById('lang-ko');
-    const langEnButton = document.getElementById('lang-en');
-    const topTabButtons = document.querySelectorAll('.top-tab-button');
-    console.log('main.js: topTabButtons on DOMContentLoaded:', topTabButtons); // 로그 유지
-
-    // --- Event Listeners ---
+    // --- DOM 생성 및 초기화 ---
+    createTabButtons();
     setupSidebarAccordion();
 
-    topTabButtons.forEach(button => {
-        console.log('main.js: Attaching event listener to topTabButton:', button.dataset.tabGroup); // 로그 유지
-        button.addEventListener('click', () => switchTabGroup(button.dataset.tabGroup));
-    });
-
-    langKoButton.addEventListener('click', () => setLanguage('ko'));
-    langEnButton.addEventListener('click', () => setLanguage('en'));
+    // --- 이벤트 리스너 설정 ---
+    document.getElementById('lang-ko').addEventListener('click', () => setLanguage('ko'));
+    document.getElementById('lang-en').addEventListener('click', () => setLanguage('en'));
 
     window.addEventListener('resize', () => {
-        const activeTabGroup = document.querySelector('.top-tab-button.active')?.dataset.tabGroup || 'game-intro';
+        const activeTabGroup = document.querySelector('.top-tab-button.active')?.dataset.tabGroup || Object.keys(tabsConfig)[0];
         switchTabGroup(activeTabGroup);
     });
 
-    // --- Initialisation ---
-    // 콘텐츠를 먼저 로드합니다.
-    
-    loadContent('game-intro');
-    loadContent('timeline');
-    loadContent('terms');
-    
+    // --- 초기 콘텐츠 로드 및 상태 설정 ---
+    // 설정 파일에 있는 모든 탭의 콘텐츠를 미리 로드합니다.
+    Object.keys(tabsConfig).forEach(tabId => {
+        loadContent(tabId);
+    });
 
     const initialLang = navigator.language.startsWith('ko') ? 'ko' : 'en';
     setLanguage(initialLang);
-    switchTabGroup('game-intro');
-    console.log('main.js: Initial setup complete.'); // 로그 추가
+
+    // 첫 번째 탭을 기본으로 활성화합니다.
+    const firstTabId = Object.keys(tabsConfig)[0];
+    switchTabGroup(firstTabId);
+
+    console.log('Application initialized based on tabsConfig.');
 });

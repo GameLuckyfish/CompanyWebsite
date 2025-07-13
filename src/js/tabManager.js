@@ -1,50 +1,37 @@
 import { restoreAllCardsToOriginalParents, showCardInPanel, isMobileMode } from './utils.js';
+import { tabsConfig } from './config/tabsConfig.js'; // 설정 파일 가져오기
 
 export function switchTabGroup(tabGroup) {
     console.log('switchTabGroup called with:', tabGroup);
     const sidebar = document.getElementById('sidebar');
-    const contentDisplay = document.getElementById('content-display');
-    console.log('Sidebar element:', sidebar);
-    console.log('Content Display element:', contentDisplay);
     const topTabButtons = document.querySelectorAll('.top-tab-button');
     const tabContents = document.querySelectorAll('.tab-content');
+    const config = tabsConfig[tabGroup];
+
+    if (!config) {
+        console.error('Invalid tabGroup provided:', tabGroup);
+        return;
+    }
 
     topTabButtons.forEach(button => {
-        button.classList.remove('active');
-        if (button.dataset.tabGroup === tabGroup) {
-            button.classList.add('active');
-        }
+        button.classList.toggle('active', button.dataset.tabGroup === tabGroup);
     });
 
-    tabContents.forEach(content => content.classList.remove('active'));
-    const targetContentId = `${tabGroup}-content`;
-    console.log('tabManager.js: Searching for element with ID:', targetContentId);
-    const targetContent = document.getElementById(targetContentId);
-    console.log('tabManager.js: Target Content element for', tabGroup, ':', targetContent);
+    tabContents.forEach(content => {
+        content.classList.toggle('active', content.id === `${tabGroup}-content`);
+    });
 
-    if (targetContent) {
-        targetContent.classList.add('active');
-        console.log('tabManager.js: Target Content classList after adding active:', targetContent.classList);
-    }
+    // 설정 객체의 hasSidebar 속성을 기반으로 사이드바를 제어합니다.
+    sidebar.style.display = config.hasSidebar ? '' : 'none';
+    console.log(`Sidebar display set to: ${sidebar.style.display || 'block'}`);
 
-    if (tabGroup === 'terms') {
-        sidebar.style.display = 'none';
-        console.log('Sidebar display set to none. Current style:', sidebar.style.display);
-    } else {
-        sidebar.style.display = '';
-        console.log('Sidebar display reset. Current style:', sidebar.style.display);
-    }
-    
-    // Only restore cards and hide feature-cards if not on the terms tab
-    if (tabGroup !== 'terms') {
+    // 사이드바가 없는 탭으로 전환 시, 기존 카드들을 원래 위치로 복원합니다.
+    if (!config.hasSidebar) {
         restoreAllCardsToOriginalParents();
-        document.querySelectorAll('.feature-card').forEach(card => card.style.display = 'none');
-        document.querySelectorAll('.sidebar-button').forEach(btn => btn.classList.remove('active'));
     }
 
-    // This part needs to be re-evaluated based on the mobile accordion logic
-    // For now, it's kept as is, but might need adjustment after sidebarAccordion.js is created.
-    if (!isMobileMode()) {
+    // 데스크탑 모드이고 사이드바가 있는 탭일 경우, 첫 번째 버튼을 활성화합니다.
+    if (!isMobileMode() && config.hasSidebar) {
         const sidebarSection = document.getElementById(`${tabGroup}-buttons`);
         if (sidebarSection) {
             const firstSidebarButton = sidebarSection.querySelector('.sidebar-button');

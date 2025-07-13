@@ -27,11 +27,15 @@
 .timeline-item::after {
     content: '';
     position: absolute;
-    width: 25px;
-    height: 25px;
-    right: -12.5px;
+    width: 50px;
+    height: 50px;
+    right: -25px;
     background-color: white;
-    border: 4px solid #007bff;
+    /* dotImage가 있으면 배경 이미지를 사용하고, 없으면 기본 테두리를 사용합니다. */
+    background-image: var(--dot-image, none);
+    background-size: contain;
+    background-position: center;
+    border: 4px solid var(--dot-image, #007bff);
     top: 15px;
     border-radius: 50%;
     z-index: 1;
@@ -45,7 +49,7 @@
 }
 
 .timeline-item:nth-child(odd)::after {
-    right: -14.5px; /* Adjust position to align with the line */
+    right: -27px; /* Adjust position to align with the line */
 }
 
 /* Right-side items */
@@ -55,7 +59,7 @@
 }
 
 .timeline-item:nth-child(even)::after {
-    left: -12.5px;
+    left: -25px;
 }
 
 .timeline-content {
@@ -81,4 +85,46 @@
     color: #555;
     margin-bottom: 0.5rem;
     display: block;
+}
+
+.timeline-main-image {
+    max-width: 50%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+/* Lore Section Styles */
+.lore-container {
+    margin-top: 1rem;
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+}
+
+.lore-toggle-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.lore-toggle-btn:hover {
+    background-color: #0056b3;
+}
+
+.lore-content {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    white-space: pre-wrap; /* 줄바꿈 유지 */
+    font-size: 0.9rem;
+    color: #333;
+    max-height: 300px; /* 최대 높이 설정 */
+    overflow-y: auto; /* 내용이 길면 스크롤바 생성 */
 }
