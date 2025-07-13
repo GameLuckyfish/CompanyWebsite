@@ -45,7 +45,7 @@ export function renderFeatureCards(data) {
     return fragment;
 }
 
-import { loadCss } from '../utils.js';
+import { loadCss, getBasePath } from '../utils.js';
 
 /**
  * '개발 일정' 탭의 타임라인을 생성하고, 각 카드에 맞는 컴포넌트를 동적으로 로드합니다.
@@ -119,10 +119,10 @@ export function renderTimeline(data) {
             const cssBasePath = `public/assets/css/components/timeline-cards/${componentName}/${componentName}`;
 
             // CSS 동적 로드
-            loadCss(cssBasePath + '.css');
+            loadCss(getBasePath() + cssBasePath + '.css');
 
             // JS 동적 로드
-            import('/' + jsBasePath + '.js')
+            import(getBasePath() + jsBasePath + '.js')
                 .then(module => {
                     if (module.init) {
                         module.init(itemDiv); // 생성된 카드 요소를 초기화 함수에 전달

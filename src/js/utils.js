@@ -40,3 +40,17 @@ export function loadCss(path) {
         console.log(`CSS loaded: ${path}`);
     }
 }
+
+/**
+ * 현재 웹 애플리케이션의 기본 경로를 반환합니다.
+ * GitHub Pages와 같은 서브디렉토리 호스팅 환경을 고려합니다.
+ * @returns {string} 기본 경로 (예: '/' 또는 '/HordeDefenseSquad/')
+ */
+export function getBasePath() {
+    const path = window.location.pathname;
+    // GitHub Pages와 같이 저장소 이름이 경로에 포함되는 경우를 처리
+    // 예: /HordeDefenseSquad/index.html -> /HordeDefenseSquad/
+    // 로컬: /index.html -> /
+    const base = path.substring(0, path.lastIndexOf('/') + 1);
+    return base;
+}
