@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 콘텐츠를 먼저 로드합니다.
     
     loadContent('game-intro');
+    loadContent('timeline');
     loadContent('terms');
     
 
