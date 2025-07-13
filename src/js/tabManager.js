@@ -1,4 +1,5 @@
 import { restoreAllCardsToOriginalParents, showCardInPanel, isMobileMode } from './utils.js';
+import { loadContent } from './contentLoader.js';
 import { tabsConfig } from './config/tabsConfig.js'; // 설정 파일 가져오기
 
 export function switchTabGroup(tabGroup) {
@@ -20,6 +21,9 @@ export function switchTabGroup(tabGroup) {
     tabContents.forEach(content => {
         content.classList.toggle('active', content.id === `${tabGroup}-content`);
     });
+
+    // 탭 전환 시 해당 탭의 콘텐츠를 다시 로드합니다.
+    loadContent(tabGroup);
 
     // 설정 객체의 hasSidebar 속성을 기반으로 사이드바를 제어합니다.
     sidebar.style.display = config.hasSidebar ? '' : 'none';

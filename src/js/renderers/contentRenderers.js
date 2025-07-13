@@ -61,7 +61,8 @@ export function renderTimeline(data) {
         itemDiv.dataset.component = item.component; // 어떤 컴포넌트인지 식별자를 추가
 
         if (item.dotImage) {
-            itemDiv.style.setProperty('--dot-image', `url(${item.dotImage})`);
+            // CSS 파일(src/css)에서 이미지(public/assets)로의 상대 경로를 계산하여 전달
+            itemDiv.style.setProperty('--dot-image', `url(../../${item.dotImage})`);
         }
 
         const contentDiv = document.createElement('div');
@@ -114,13 +115,14 @@ export function renderTimeline(data) {
         // --- 동적 로딩 --- //
         if (item.component) {
             const componentName = item.component;
-            const basePath = `/src/components/timeline-cards/${componentName}/${componentName}`;
+            const jsBasePath = `public/assets/js/components/timeline-cards/${componentName}/${componentName}`;
+            const cssBasePath = `public/assets/css/components/timeline-cards/${componentName}/${componentName}`;
 
             // CSS 동적 로드
-            loadCss(basePath + '.css');
+            loadCss(cssBasePath + '.css');
 
             // JS 동적 로드
-            import(basePath + '.js')
+            import('/' + jsBasePath + '.js')
                 .then(module => {
                     if (module.init) {
                         module.init(itemDiv); // 생성된 카드 요소를 초기화 함수에 전달

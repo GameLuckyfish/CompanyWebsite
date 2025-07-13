@@ -4,8 +4,8 @@ export const timelineData = [
         date: "0000년 0분기",
         title: "영웅 추가 LinaSilverrain",
         description: "새로운 영웅 LinaSilverrain이 전장에 합류합니다.",
-        dotImage: "/public/assets/images/character/dot_LinaSilverrain.png",
-        mainImage: "/public/assets/images/img_LinaSilverrain.png",
+        dotImage: "public/assets/images/character/dot_LinaSilverrain.png",
+        mainImage: "public/assets/images/img_LinaSilverrain.png",
         lore: `간단 프로필
 나이: 22세
 
