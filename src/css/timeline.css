@@ -8,19 +8,20 @@
 #timeline-content::before {
     content: '';
     position: absolute;
-    left: 50%;
+    left: 20px; /* 왼쪽으로 정렬 */
     top: 0;
     bottom: 0;
     width: 4px;
     background: #e9ecef;
-    transform: translateX(-50%);
+    /* transform: translateX(-50%); 제거 */
 }
 
 .timeline-item {
     padding: 1rem 2rem;
     position: relative;
-    width: 50%;
+    width: calc(100% - 40px); /* 왼쪽 여백 20px + 원 크기 20px = 40px */
     box-sizing: border-box;
+    left: 40px; /* 모든 아이템을 오른쪽으로 이동 */
 }
 
 /* The circle on the timeline */
@@ -29,7 +30,7 @@
     position: absolute;
     width: 50px;
     height: 50px;
-    right: -25px;
+    left: -25px; /* 원을 왼쪽 선에 맞춤 */
     background-color: white;
     /* dotImage가 있으면 배경 이미지를 사용하고, 없으면 기본 테두리를 사용합니다. */
     background-image: var(--dot-image, none);
@@ -41,21 +42,21 @@
     z-index: 1;
 }
 
-/* Left-side items */
+/* Left-side items (이제 모두 오른쪽으로 정렬되므로 left/right 구분 없음) */
 .timeline-item:nth-child(odd) {
-    left: 0;
-    padding-right: 40px; /* Space for the circle */
-    text-align: right;
+    /* left: 0; 제거 */
+    padding-right: 2rem; /* 기존 패딩 유지 */
+    text-align: left; /* 텍스트 왼쪽 정렬 */
 }
 
 .timeline-item:nth-child(odd)::after {
-    right: -27px; /* Adjust position to align with the line */
+    left: -27px; /* Adjust position to align with the line */
 }
 
-/* Right-side items */
+/* Right-side items (이제 모두 오른쪽으로 정렬되므로 left/right 구분 없음) */
 .timeline-item:nth-child(even) {
-    left: 50%;
-    padding-left: 40px; /* Space for the circle */
+    /* left: 50%; 제거 */
+    padding-left: 2rem; /* 기존 패딩 유지 */
 }
 
 .timeline-item:nth-child(even)::after {
