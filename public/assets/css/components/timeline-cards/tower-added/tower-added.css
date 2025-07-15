@@ -1,0 +1,18 @@
+
+.tower-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.tower-item {
+    text-align: center;
+}
+
+.tower-item img {
+    width: 100%;
+    max-width: 150px;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+}

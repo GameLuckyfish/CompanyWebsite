@@ -36,10 +36,11 @@ export const timelineData = [
 “어둠 속에서도 빛을 잃지 않는 검이 되어 보이겠어요.”`
     },
     {
+        component: 'tower-added',
         date: "0000년 0분기",
-        title: "신규 유닛 5종 추가",
-        description: "새로운 전략의 핵심이 될 강력한 유닛들이 합류합니다.",
-        image: ""
+        title: "타워 추가",
+        description: "방어 전략의 핵심이 될 다양한 타워들이 추가됩니다.",
+        dotImage: "public/assets/images/structure/arrow_tower.png"
     },
     {
         date: "0000년 0분기",
