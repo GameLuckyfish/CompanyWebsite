@@ -34,14 +34,23 @@ export function switchTabGroup(tabGroup) {
         restoreAllCardsToOriginalParents();
     }
 
-    // 데스크탑 모드이고 사이드바가 있는 탭일 경우, 첫 번째 버튼을 활성화합니다.
+    // 데스크탑 모드이고 사이드바가 있는 탭일 경우, 올바른 카드를 표시합니다.
     if (!isMobileMode() && config.hasSidebar) {
         const sidebarSection = document.getElementById(`${tabGroup}-buttons`);
         if (sidebarSection) {
-            const firstSidebarButton = sidebarSection.querySelector('.sidebar-button');
-            if (firstSidebarButton) {
-                firstSidebarButton.classList.add('active');
-                showCardInPanel(firstSidebarButton.dataset.target);
+            let activeButton = sidebarSection.querySelector('.sidebar-button.active');
+            
+            // 활성화된 버튼이 없으면 첫 번째 버튼을 기본값으로 설정합니다.
+            if (!activeButton) {
+                activeButton = sidebarSection.querySelector('.sidebar-button');
+                if (activeButton) {
+                    activeButton.classList.add('active');
+                }
+            }
+
+            // 활성화된 버튼에 해당하는 카드를 표시합니다.
+            if (activeButton) {
+                showCardInPanel(activeButton.dataset.target);
             }
         }
     }

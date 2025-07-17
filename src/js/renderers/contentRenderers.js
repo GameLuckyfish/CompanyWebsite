@@ -1,4 +1,6 @@
 
+import { loadCss, getBasePath } from '../utils.js';
+
 /**
  * '게임 소개' 탭의 카드 목록을 생성합니다.
  * @param {Array} data - gameIntroData 배열
@@ -37,6 +39,41 @@ export function renderFeatureCards(data) {
 
         section.appendChild(h2);
         section.appendChild(mediaAndDescriptionDiv);
+
+        // --- Lobby Hub Grid 렌더링 ---
+        if (cardData.subItems && cardData.subItems.length > 0) {
+            // CSS 동적 로드
+            loadCss(getBasePath() + 'public/assets/css/components/lobby-hub.css');
+
+            const gridContainer = document.createElement('div');
+            gridContainer.className = 'lobby-hub-grid';
+
+            cardData.subItems.forEach(item => {
+                const hubCard = document.createElement('div');
+                hubCard.className = 'hub-card';
+
+                const img = document.createElement('img');
+                img.src = item.image;
+                img.alt = item.koTitle;
+
+                const title = document.createElement('h3');
+                title.setAttribute('data-ko', item.koTitle);
+                title.setAttribute('data-en', item.enTitle);
+                title.textContent = item.koTitle;
+
+                const desc = document.createElement('p');
+                desc.setAttribute('data-ko', item.koDescription);
+                desc.setAttribute('data-en', item.enDescription);
+                desc.textContent = item.koDescription;
+
+                hubCard.appendChild(img);
+                hubCard.appendChild(title);
+                hubCard.appendChild(desc);
+                gridContainer.appendChild(hubCard);
+            });
+
+            section.appendChild(gridContainer);
+        }
         
         // 원본 부모 ID를 저장합니다. (utils.js의 restoreAllCardsToOriginalParents 함수를 위해)
         section.dataset.originalParentId = 'game-intro-content';
@@ -45,7 +82,6 @@ export function renderFeatureCards(data) {
     return fragment;
 }
 
-import { loadCss, getBasePath } from '../utils.js';
 
 /**
  * '개발 일정' 탭의 타임라인을 생성하고, 각 카드에 맞는 컴포넌트를 동적으로 로드합니다.

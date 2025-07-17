@@ -40,7 +40,9 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('lang-en').addEventListener('click', () => setLanguage('en'));
 
     window.addEventListener('resize', () => {
-        const activeTabGroup = document.querySelector('.top-tab-button.active')?.dataset.tabGroup || Object.keys(tabsConfig)[0];
+        // 현재 활성화된 탭 그룹을 찾아서 유지합니다.
+        const activeTab = document.querySelector('.top-tab-button.active');
+        const activeTabGroup = activeTab ? activeTab.dataset.tabGroup : Object.keys(tabsConfig)[0];
         switchTabGroup(activeTabGroup);
     });
 

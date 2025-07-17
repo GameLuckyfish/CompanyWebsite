@@ -42,19 +42,9 @@
 
 .media-and-description {
     display: flex;
+    flex-direction: column; /* 이미지와 설명을 세로로 배치 */
     gap: 1.5rem;
-    align-items: flex-start;
-}
-
-@media (max-width: 900px) and (orientation: portrait) {
-    .media-and-description {
-        flex-direction: column; /* Stack image and content vertically */
-        align-items: center; /* Center image */
-    }
-
-    .media-and-description img {
-        max-width: 195px; /* Half the original size for portrait */
-    }
+    align-items: center; /* 중앙 정렬 */
 }
 
 .media-and-description img {
@@ -70,10 +60,20 @@
     max-width: 585px; /* 390px * 1.5 */
 }
 
+/* Double size for unit-board-class-card image */
+#unit-board-class-card .media-and-description img {
+    max-width: 1560px; /* 780px * 2 */
+}
 
-@media (min-width: 901px) and (orientation: landscape) {
+@media (max-width: 900px) {
     .media-and-description img {
-        max-width: 195px;
+        max-width: 195px; /* Default for smaller screens */
+    }
+    #title-card .media-and-description img {
+        max-width: 292.5px; /* 195px * 1.5 */
+    }
+    #unit-board-class-card .media-and-description img {
+        max-width: 780px; /* 390px * 2 */
     }
 }
 
