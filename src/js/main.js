@@ -3,6 +3,7 @@ import { switchTabGroup } from './tabManager.js';
 import { setupSidebarAccordion } from './sidebarAccordion.js';
 import { loadContent } from './contentLoader.js';
 import { tabsConfig } from './config/tabsConfig.js';
+import { initializeGameIntroSidebar } from './ui/sidebar.js'; // 사이드바 초기화 함수 임포트
 
 /**
  * 설정 파일(tabsConfig)을 기반으로 탭 버튼을 동적으로 생성합니다.
@@ -31,6 +32,7 @@ function createTabButtons() {
 document.addEventListener('DOMContentLoaded', () => {
     // --- DOM 생성 및 초기화 ---
     createTabButtons();
+    initializeGameIntroSidebar(); // 게임 소개 사이드바 버튼 생성
     setupSidebarAccordion();
 
     // --- 이벤트 리스너 설정 ---

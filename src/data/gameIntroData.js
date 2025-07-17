@@ -4,23 +4,15 @@ export const gameIntroData = [
         koTitle: "게임 소개",
         enTitle: "Game Intro",
         image: "public/assets/images/타이틀.png",
-        koDescription: `Horde Defense Squad의 웅장한 시작을 알리는 타이틀 화면입니다. 플레이어는 여기서 새로운 게임을 시작하거나, 기존 데이터를 불러오고, 게임 설정을 조정하는 등 모험을 위한 첫 발을 내딛을 수 있습니다.`, 
+        koDescription: `쏟아지는 적들로부터 여신상을 지켜내세요! 다양한 유닛을 조합하고 성장시켜, 끊임없이 몰려오는 적들을 막아내는 짜릿한 디펜스 게임! 당신의 모든 선택이 승패를 결정합니다. 지금 바로 지휘관이 되어 부대를 이끌어보세요!`,
         enDescription: `This is the majestic title screen of Horde Defense Squad, marking the beginning of your adventure. Players can start a new game, load existing data, adjust game settings, and take their first steps into the world.`
-    },
-    {
-        id: "login-card",
-        koTitle: "로그인",
-        enTitle: "Login",
-        image: "public/assets/images/로그인.PNG",
-        koDescription: `안정적인 게임 플레이를 위해 게스트 로그인 기능을 제공합니다. 현재 구글 로그인 연동은 개발 중이며, 추후 업데이트를 통해 더욱 편리한 로그인 환경을 제공할 예정입니다. 로그인 시 서버에서 플레이어의 소중한 데이터를 안전하게 불러와 언제든 이어서 플레이할 수 있습니다.`, 
-        enDescription: `For stable gameplay, guest login is provided. Google login integration is currently under development and will be available in future updates for a more convenient login experience. Upon logging in, your valuable player data is securely loaded from the server, allowing you to continue playing anytime.`
     },
     {
         id: "lobby-card",
         koTitle: "메인 로비",
         enTitle: "Main Lobby",
         image: "public/assets/images/로비.PNG",
-        koDescription: `게임의 핵심 기능을 한눈에 볼 수 있는 메인 로비 화면입니다. 이곳에서 랭킹, 상점, 특성, 우편함 등 다양한 메뉴로 손쉽게 이동하여 게임의 모든 콘텐츠를 탐험할 수 있습니다.`, 
+        koDescription: `모든 모험이 시작되는 당신의 아지트, 메인 로비입니다! 랭킹 확인부터 상점 쇼핑, 특성 강화까지! 손가락 하나로 게임의 모든 재미를 만끽할 준비, 되셨나요?`,
         enDescription: `The main lobby screen provides an overview of the game's core features. From here, you can easily navigate to various menus such as Ranking, Shop, Traits, and Mailbox to explore all the game's content.`
     },
     {
@@ -28,7 +20,7 @@ export const gameIntroData = [
         koTitle: "랭킹",
         enTitle: "Ranking",
         image: "public/assets/images/랭킹.PNG",
-        koDescription: `자신이 세운 전투 기록을 서버에 안전하게 저장하고, 전 세계의 다른 플레이어들과 실력을 겨루며 순위를 비교할 수 있는 랭킹 시스템입니다. 최고의 지휘관이 되어 명예의 전당에 이름을 올리세요!`, 
+        koDescription: `당신의 위대한 전략을 전 세계에 보여줄 시간! 다른 플레이어들과 실력을 겨루고 랭킹 최상단에 당신의 이름을 새겨보세요. 최고의 지휘관은 바로 당신입니다!`,
         enDescription: `This ranking system allows you to securely save your battle records to the server and compare your skills with other players worldwide. Become the top commander and engrave your name in the hall of fame!`
     },
     {
@@ -36,7 +28,7 @@ export const gameIntroData = [
         koTitle: "상점",
         enTitle: "Shop",
         image: "public/assets/images/상점.PNG",
-        koDescription: `게임 내에서 획득한 재화(골드, 다이아 등)를 사용하거나, 인앱 구매를 통해 강력한 유닛, 희귀 아이템, 성장 재료 등 다양한 상품을 획득할 수 있는 공간입니다. 전략적인 구매로 전력을 강화하세요.`, 
+        koDescription: `더 강력한 부대를 원하시나요? 상점에는 당신의 눈을 반짝이게 할 강력한 유닛과 희귀 아이템이 가득! 차곡차곡 모은 재화로 전략의 깊이를 더해보세요.`,
         enDescription: `This is a place where you can acquire various items such as powerful units, rare items, and growth materials by using in-game currency (gold, diamonds, etc.) or through in-app purchases. Strengthen your forces with strategic purchases.`
     },
     {
@@ -44,7 +36,7 @@ export const gameIntroData = [
         koTitle: "특성",
         enTitle: "Traits",
         image: "public/assets/images/특성.PNG",
-        koDescription: `플레이어 레벨이 오를수록 해금되는 다양한 특성 중에서 자신의 플레이 스타일에 맞는 패시브 능력을 선택하고 강화할 수 있습니다. 특성 초기화를 통해 언제든 새로운 전략을 시도할 수 있습니다.`, 
+        koDescription: `나만의 전투 스타일을 완성하는 비밀, 바로 특성! 레벨을 올리고 개성 넘치는 패시브 능력들을 조합해 보세요. 언제든 초기화하고 새로운 전략을 시험해볼 수 있답니다.`,
         enDescription: `As your player level increases, you can unlock various traits and choose and enhance passive abilities that suit your playstyle. You can reset your traits at any time to try new strategies.`
     },
     {
@@ -52,7 +44,7 @@ export const gameIntroData = [
         koTitle: "우편함",
         enTitle: "Mailbox",
         image: "public/assets/images/우편함.PNG",
-        koDescription: `이벤트 보상, 운영팀의 공지, 친구에게 받은 선물 등 다양한 아이템과 정보를 수령할 수 있는 개인 우편함입니다. 일부 우편은 수령 기한이 있으니, 기간 내에 꼭 확인하여 보상을 놓치지 마세요!`, 
+        koDescription: `띵동! 선물이 도착했어요! 이벤트 보상부터 운영팀이 드리는 깜짝 선물까지, 우편함을 확인하는 즐거움을 놓치지 마세요. 사라지기 전에 얼른 받아 가세요!`,
         enDescription: `This is your personal mailbox where you can receive various items and information, such as event rewards, announcements from the operations team, and gifts from friends. Some mail may have an expiration date, so be sure to check within the period to not miss out on rewards!`
     },
     {
@@ -60,7 +52,7 @@ export const gameIntroData = [
         koTitle: "인벤토리",
         enTitle: "Inventory",
         image: "public/assets/images/인벤토리.PNG",
-        koDescription: `현재 보유하고 있는 모든 아이템을 한눈에 확인하고, 각 아이템의 상세한 설명과 능력치를 볼 수 있는 공간입니다. 전략적인 아이템 관리를 통해 전투 효율을 극대화하세요.`, 
+        koDescription: `그동안 수집한 보물들이 모두 여기에! 인벤토리를 열어 당신의 아이템들을 확인하고, 다음 전투를 빛내줄 최고의 조합을 찾아보세요. 승리를 위한 준비는 여기서부터 시작됩니다.`,
         enDescription: `This is a space where you can view all your currently held items at a glance and see detailed descriptions and stats for each item. Maximize your combat efficiency through strategic item management.`
     },
     {
@@ -68,7 +60,7 @@ export const gameIntroData = [
         koTitle: "랜덤 뽑기",
         enTitle: "Random Draw",
         image: "public/assets/images/랜덤뽑기.PNG",
-        koDescription: `다이아몬드와 같은 특정 재화를 소모하여 강력한 유닛, 희귀 장비, 성장 재료 등 게임에 필요한 다양한 자원을 무작위로 획득할 수 있는 시스템입니다. 운명의 여신이 당신에게 미소 지을 때까지 도전하세요!`, 
+        koDescription: `두근두근, 어떤 영웅이 당신을 찾아올까요? 다이아를 사용해 당신의 부대를 한 번에 강력하게 만들어 줄 최고의 유닛과 장비를 만나보세요. 대박의 행운이 당신을 기다립니다!`,
         enDescription: `This system allows you to randomly acquire various resources needed for the game, such as powerful units, rare equipment, and growth materials, by consuming specific currencies like diamonds. Challenge your luck until the goddess of fortune smiles upon you!`
     },
     {
@@ -76,7 +68,7 @@ export const gameIntroData = [
         koTitle: "유닛",
         enTitle: "Units",
         image: "public/assets/images/유닛.PNG",
-        koDescription: `Horde Defense Squad의 핵심 전력인 유닛들은 일반, 고급, 레어, 영웅, 전설의 5가지 등급으로 나뉩니다. 각 유닛은 고유한 능력과 역할을 가지며, 이들을 조합하여 다양한 전략을 구사할 수 있습니다.`, 
+        koDescription: `전장을 누빌 당신의 든든한 아군, 바로 유닛입니다! 평범하지만 강력한 일반 유닛부터 모두가 꿈꾸는 전설의 영웅까지! 각기 다른 개성을 가진 유닛들을 모아 최강의 팀을 만들어보세요.`,
         enDescription: `The core strength of Horde Defense Squad, units are divided into 5 grades: Common, Uncommon, Rare, Epic, and Legendary. Each unit has unique abilities and roles, allowing you to devise various strategies by combining them.`
     },
     {
@@ -84,7 +76,7 @@ export const gameIntroData = [
         koTitle: "티켓 뽑기",
         enTitle: "Ticket Draw",
         image: "public/assets/images/티켓뽑기.PNG",
-        koDescription: `보스 티켓, 하급/중급/상급 티켓 등 다양한 종류의 티켓을 사용하여 특정 등급 범위 내에서 랜덤한 유닛을 소환할 수 있습니다. 여러 후보 유닛 중 하나를 선택하여 자신의 부대에 합류시키세요.`, 
+        koDescription: `원하는 등급의 유닛을 얻을 절호의 찬스! 특별한 티켓을 사용해 당신의 부대에 꼭 필요한 유닛을 소환하세요. 여러 후보 중 마음에 쏙 드는 유닛을 직접 고르는 재미까지!`,
         enDescription: `Use various types of tickets, such as Boss Tickets, Low/Mid/High-Grade Tickets, to summon random units within a specific grade range. Choose one from several candidate units to add to your army.`
     },
     {
@@ -92,7 +84,7 @@ export const gameIntroData = [
         koTitle: "유닛 현황판 (등급별)",
         enTitle: "Unit Board (by Grade)",
         image: "public/assets/images/전투기본-등급.PNG",
-        koDescription: `보유하고 있는 모든 유닛을 등급별로 깔끔하게 정렬하여 한눈에 파악할 수 있는 현황판입니다. 이를 통해 자신의 전력을 효율적으로 관리하고, 다음 전투를 위한 전략을 세울 수 있습니다.`, 
+        koDescription: `나의 부대를 한눈에! 등급별로 쫙 정렬된 유닛들을 보며 다음 전투의 필승 전략을 구상해보세요. 누가누가 있는지 쉽게 파악하고 최고의 팀을 꾸릴 수 있습니다.`,
         enDescription: `This board allows you to view all your owned units neatly sorted by grade at a glance. It helps you efficiently manage your forces and plan strategies for the next battle.`
     },
     {
@@ -100,7 +92,7 @@ export const gameIntroData = [
         koTitle: "유닛 현황판 (클래스별)",
         enTitle: "Unit Board (by Class)",
         image: "public/assets/images/전투기본-클래스.PNG",
-        koDescription: `보유한 유닛들을 클래스(직업)별로 분류하여 보여주는 현황판입니다. 각 클래스의 특성을 고려한 조합과 시너지를 구상할 때 매우 유용하며, 전략적인 팀 구성을 돕습니다.`, 
+        koDescription: `최고의 시너지를 찾아서! 클래스별로 유닛을 모아보면 상상하지 못했던 강력한 조합이 보일 거예요. 탱커, 딜러, 서포터의 완벽한 조화로 전장을 지배하세요!`,
         enDescription: `This board displays your units categorized by class (job). It is very useful for planning combinations and synergies considering the characteristics of each class, and helps in strategic team composition.`
     },
     {
@@ -108,7 +100,7 @@ export const gameIntroData = [
         koTitle: "여신상",
         enTitle: "Goddess Statue",
         image: "public/assets/images/여신상 정보창 + 경고 팝업.PNG",
-        koDescription: `플레이어가 모든 역량을 다해 보호해야 할 핵심 목표물인 여신상입니다. 여신상의 HP가 0이 되면 게임에서 패배하게 됩니다. 여신상을 강화하여 방어력을 높이거나, 보유 유닛을 자동으로 합쳐주는 편리한 기능을 활용하여 효율적인 방어를 구축하세요.`, 
+        koDescription: `우리가 반드시 지켜야 할 단 하나의 목표, 바로 여신상입니다! 여신상이 무너지면 모든 것이 끝나요. 유닛들을 자동으로 합쳐주는 편리한 기능과 꾸준한 강화로 여신상을 튼튼하게 지켜주세요!`,
         enDescription: `The Goddess Statue is the core objective that players must protect with all their might. If the statue's HP reaches 0, the game is lost. Strengthen the statue to increase its defense, or utilize convenient features like automatic unit merging to build an efficient defense.`
     },
     {
@@ -116,7 +108,7 @@ export const gameIntroData = [
         koTitle: "유닛 정보",
         enTitle: "Unit Information",
         image: "public/assets/images/유닛정보창.PNG",
-        koDescription: `선택한 유닛의 상세한 능력치, 스킬 정보, 성장 상태 등을 한눈에 볼 수 있는 화면입니다. 이곳에서 유닛 합성, 공격 명령, 이동 명령 등 다양한 상호작용을 통해 유닛을 효율적으로 관리하고 전투를 지휘할 수 있습니다.`, 
+        koDescription: `내 유닛, 얼마나 강할까? 유닛 정보창에서 능력치와 스킬을 꼼꼼히 확인하고, 더 강력하게 성장시켜 보세요. 합성부터 공격 명령까지, 모든 컨트롤이 당신의 손에 달려있습니다.`,
         enDescription: `This screen provides a comprehensive view of a selected unit's detailed stats, skill information, and growth status. From here, you can efficiently manage your units and command battles through various interactions such as unit merging, attack commands, and movement orders.`
     },
     {
@@ -124,7 +116,7 @@ export const gameIntroData = [
         koTitle: "다중 유닛 선택",
         enTitle: "Multi-Unit Selection",
         image: "public/assets/images/다중유닛 정보창.PNG",
-        koDescription: `여러 유닛을 동시에 선택하여 그룹으로 제어할 수 있는 기능입니다. 선택된 유닛들은 동일한 명령을 수행하여 부대 단위의 전략적 움직임을 가능하게 합니다. 복잡한 전장에서도 효율적인 유닛 관리를 통해 승리를 쟁취하세요.`, 
+        koDescription: `일일이 컨트롤하기 힘들었죠? 이제 여러 유닛을 한 번에 선택해 부대를 지휘하세요! 모두 함께 같은 목표를 향해 움직이는 모습은 정말 든든할 거예요. 복잡한 전투도 문제없어요!`,
         enDescription: `This feature allows you to select and control multiple units simultaneously as a group. Selected units will execute the same command, enabling strategic squad-based movements. Achieve victory through efficient unit management even in complex battlefields.`
     },
     {
@@ -132,7 +124,7 @@ export const gameIntroData = [
         koTitle: "스킬",
         enTitle: "Skills",
         image: "public/assets/images/스킬.PNG",
-        koDescription: `전투의 흐름을 바꿀 수 있는 강력한 마법 스킬들입니다. 마법서를 소모하여 적 전체를 즉시 처치하는 광역 스킬, 일정 시간 동안 아군 유닛의 공격력을 대폭 강화하는 버프 스킬 등 다양한 효과를 가진 스킬을 전략적으로 활용하여 위기를 극복하고 승리를 쟁취하세요.`, 
+        koDescription: `전세가 불리하다면? 강력한 스킬 한 방으로 역전의 기회를! 적들을 한 번에 쓸어버리거나, 아군을 엄청나게 강하게 만드는 마법 같은 순간! 짜릿한 승리를 경험해보세요.`,
         enDescription: `These powerful magic skills can change the tide of battle. Strategically utilize skills with various effects, such as area-of-effect skills that instantly defeat all enemies by consuming spellbooks, or buff skills that significantly enhance allied units' attack power for a certain period, to overcome crises and achieve victory.`
     },
     {
@@ -140,7 +132,7 @@ export const gameIntroData = [
         koTitle: "인게임 강화",
         enTitle: "In-Game Upgrades",
         image: "public/assets/images/강화.PNG",
-        koDescription: `골드를 소모하여 현재 전투 중인 모든 유닛의 공격력, 체력, 방어력을 영구적으로 강화할 수 있는 시스템입니다. 이 강화 효과는 게임이 끝나도 유지되어 다음 전투에 영향을 미치므로, 꾸준한 강화를 통해 강력한 부대를 육성하세요.`, 
+        koDescription: `전투 중에도 강해질 수 있다! 골드를 모아 모든 유닛의 능력치를 쑥쑥 성장시켜 보세요. 이번 전투의 강화가 다음 모험까지 이어진다니, 정말 든든하죠?`,
         enDescription: `This system allows you to permanently upgrade the attack, health, and defense of all your units currently in battle by consuming gold. These upgrades persist even after the game ends, affecting subsequent battles, so continuously upgrade to cultivate a powerful army.`
     },
     {
@@ -148,15 +140,15 @@ export const gameIntroData = [
         koTitle: "랜덤 이벤트",
         enTitle: "Random Events",
         image: "public/assets/images/랜덤이벤트.PNG",
-        koDescription: `게임 플레이 중 무작위로 발생하는 흥미로운 이벤트들입니다. 천사의 축복처럼 긍정적인 효과를 주거나, 악마의 저주처럼 부정적인 효과를 줄 수도 있습니다. 때로는 특별한 상품을 판매하는 랜덤 상점이 나타나 예상치 못한 기회를 제공하기도 합니다.`, 
-        enDescription: `These are intriguing events that occur randomly during gameplay. They can provide positive effects like an angel's blessing or negative effects like a devil's curse. Sometimes, a random shop selling special items may appear, offering unexpected opportunities.`
+        koDescription: `예측불허! 게임 중에 어떤 일이 일어날지 몰라요! 천사의 축복으로 강해지거나, 악마의 장난에 빠질 수도? 깜짝 등장하는 상점에서 특별한 아이템을 만나는 행운도 놓치지 마세요!`,
+        enDescription: `These are intriguing events that occur randomly during gameplay. They can provide positive effects like an angel's blessing or a devil's curse. Sometimes, a random shop selling special items may appear, offering unexpected opportunities.`
     },
     {
         id: "boss-card",
         koTitle: "보스",
         enTitle: "Boss",
         image: "public/assets/images/보스.PNG",
-        koDescription: `각 스테이지의 마지막을 장식하는 강력한 보스 몬스터입니다. 제한 시간 내에 처치하지 못하면 게임에서 패배하게 되는 큰 도전 과제이며, 보스를 물리치면 다음 스테이지로 진출하거나 특별한 보상을 획득할 수 있습니다.`, 
+        koDescription: `두둥! 스테이지의 끝판왕, 거대한 보스가 등장했습니다! 제한 시간 안에 모든 힘을 쏟아부어 물리쳐야 해요. 엄청난 보상이 걸린 이 전투, 승리할 준비 되셨나요?`,
         enDescription: `This is a powerful boss monster that marks the end of each stage. It's a significant challenge where failure to defeat it within the time limit results in a game over. Defeating the boss allows you to advance to the next stage or acquire special rewards.`
     }
 ];
